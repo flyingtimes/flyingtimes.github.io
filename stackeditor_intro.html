@@ -65,15 +65,15 @@
 
 
 
-<pre class="prettyprint"><code class=" hljs erlang">```flow
-st=&gt;start: <span class="hljs-variable">Start</span>
-e=&gt;<span class="hljs-keyword">end</span>
-op=&gt;operation: <span class="hljs-variable">My</span> <span class="hljs-variable">Operation</span>
-<span class="hljs-keyword">cond</span>=&gt;condition: <span class="hljs-variable">Yes</span> or <span class="hljs-variable">No</span>?
+<pre class="prettyprint">```flow
+st=>start: Start
+e=>end
+op=>operation: My Operation
+cond=>condition: Yes or No?
 
-st-&gt;op-&gt;<span class="hljs-keyword">cond</span>
-<span class="hljs-function"><span class="hljs-title">cond</span><span class="hljs-params">(yes)</span>-&gt;</span>e
-<span class="hljs-function_name">cond</span>(no)-&gt;op</code></pre>
+st->op->cond
+cond(yes)->e
+cond(no)->op</pre>
 
 <p>在markdown编辑器中输入以上内容，将得到以下显示：</p>
 
@@ -91,9 +91,9 @@ st-&gt;op-&gt;<span class="hljs-keyword">cond</span>
 
 
 
-<pre class="prettyprint"><code class=" hljs markdown"><span class="hljs-bullet">*   </span>Red
-<span class="hljs-bullet">*   </span>Green
-<span class="hljs-bullet">*   </span>Blue</code></pre>
+<pre class="prettyprint"><*   Red
+*   Green
+*   Blue</pre>
 
 <p>在markdown编辑器中输入以上内容，将得到以下显示：</p>
 
