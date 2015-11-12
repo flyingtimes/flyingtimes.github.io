@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+# 机械臂操控原理
+
+## 设置通信波特率：
+Serial.begin(9600);
+## 控制方式
+### 控制单个舵机
+Serial.print("#1P800T1000\r\n");  // S1号舵机旋转到脉宽为800的位置，使用时间1000ms
+
+----
+### 控制多个舵机
+Serial.print("#1P600#2P900#8P2500T100\r\n");  // S1号舵机旋转到脉宽为800的位置，使用时间1000ms
+
+---
+
+## 设置机器人的初始动作 
+舵机控制板刚打开电源的瞬间,机器人可能会乱动,这个可能是舵机上电复位引起的,也可 能舵机控制板上电瞬 间输出的信号不稳定造成的,用户可以设置脱机动作来给机器人设置一个初始动作组。 首先, 在电脑上下载一个简单的动作组(机器人的一个初始状态),然后设置该动作组为脱机执行,设置之后, 每次控制板 打开电源开关的时候,就会执行这个动作,如果你设置的是机器人站立的姿势,那么机器人打开电源 开关的时候,就 会先站立。
+## 重视电源问题
+正常使用舵机是需要大功率的电源,一个 13KG.CM 扭力的金属舵机,空载的时候所需要的电流几乎为 0,但是 满载的时候电流可能高达 3A。如果一个机器人安装有 10 个这样的舵机,则需要一个能够输出 5A 左右电流的电 源,才可以保证每一个舵机都可以工作,当然了如果要每一个舵机都要满载工作,那么 5A 也是远远不够的。
+
+由于舵机需要很大的电流,如果舵机电源不好,舵机动的瞬间或者舵机负载比较大的时候,由于电源电流不够, 引起 电压降低。电压下降之后,舵机就不受控或者乱动。
+## 供电不足的检查方法
+可以用万用表测控制板上的蓝色的接线端子的 VS 和 GND 的电压值,测舵 机 动的瞬间的电压值,如果瞬间电压会下降很多,那就是说明你的电源或者电池不行。
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<h1 id="">机械臂操控原理</h1>
+
+<h2 id="">设置通信波特率：</h2>
+
+<p>Serial.begin(9600);</p>
+
+<h2 id="">控制方式</h2>
+
+<h3 id="">控制单个舵机</h3>
+
+<p>Serial.print("#1P800T1000\r\n");  // S1号舵机旋转到脉宽为800的位置，使用时间1000ms</p>
+
+<hr>
+
+<h3 id="">控制多个舵机</h3>
+
+<p>Serial.print("#1P600#2P900#8P2500T100\r\n");  // S1号舵机旋转到脉宽为800的位置，使用时间1000ms</p>
+
+<hr>
+
+<h2 id="">设置机器人的初始动作</h2>
+
+<p>舵机控制板刚打开电源的瞬间,机器人可能会乱动,这个可能是舵机上电复位引起的,也可 能舵机控制板上电瞬 间输出的信号不稳定造成的,用户可以设置脱机动作来给机器人设置一个初始动作组。 首先, 在电脑上下载一个简单的动作组(机器人的一个初始状态),然后设置该动作组为脱机执行,设置之后, 每次控制板 打开电源开关的时候,就会执行这个动作,如果你设置的是机器人站立的姿势,那么机器人打开电源 开关的时候,就 会先站立。</p>
+
+<h2 id="">重视电源问题</h2>
+
+<p>正常使用舵机是需要大功率的电源,一个 13KG.CM 扭力的金属舵机,空载的时候所需要的电流几乎为 0,但是 满载的时候电流可能高达 3A。如果一个机器人安装有 10 个这样的舵机,则需要一个能够输出 5A 左右电流的电 源,才可以保证每一个舵机都可以工作,当然了如果要每一个舵机都要满载工作,那么 5A 也是远远不够的。</p>
+
+<p>由于舵机需要很大的电流,如果舵机电源不好,舵机动的瞬间或者舵机负载比较大的时候,由于电源电流不够, 引起 电压降低。电压下降之后,舵机就不受控或者乱动。</p>
+
+<h2 id="">供电不足的检查方法</h2>
+
+<p>可以用万用表测控制板上的蓝色的接线端子的 VS 和 GND 的电压值,测舵 机 动的瞬间的电压值,如果瞬间电压会下降很多,那就是说明你的电源或者电池不行。</p>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "arm_setting.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
